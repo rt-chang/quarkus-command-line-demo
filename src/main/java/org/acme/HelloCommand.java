@@ -17,7 +17,7 @@ public class HelloCommand implements Runnable, QuarkusApplication {
     @CommandLine.Option(names = {"-n", "--name"}, description = "Who will we greet?", defaultValue = "World")
     String name;
     @CommandLine.Option(names = {"-d", "--day"}, description = "What day is it?", defaultValue = "unknown")
-    String animal;
+    String day;
 
     private final GreetingService greetingService;
 
@@ -27,7 +27,7 @@ public class HelloCommand implements Runnable, QuarkusApplication {
 
     @Override
     public void run() {
-        greetingService.sayHello(name, animal);
+        greetingService.sayHello(name, day);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class HelloCommand implements Runnable, QuarkusApplication {
 
 @Dependent
 class GreetingService {
-    void sayHello(String name, String animal) {
-        System.out.println("Hello " + name + "! Your animal is " + animal);
+    void sayHello(String name, String day) {
+        System.out.println("Hello " + name + "! Today is " + day);
     }
 }

@@ -1,8 +1,10 @@
-# code-with-quarkus project
+# Quarkus Command Line Demo
 
-## Running the application in dev mode
+This was a simple demo project created to address a bug in the Quarkus framework v1.5.2
+https://github.com/quarkusio/quarkus/issues/10166
 
-Command line takes two arguments `--name` and `--day`
+The project takes 2 command line arguments (`--name`, `--day`) and was expected to produce a message (`Hello {name}! Today is {day}`)
+
 This should be called via:
 ```
 ./mvnw quarkus:dev -Dquarkus.args="--name=Bob --day=Wednesday"
